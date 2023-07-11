@@ -20,6 +20,7 @@ const createBlog = async (req, res) => {
 //* Prikazuvanje na site blogs (cela kolekcija)
 const getAllBlogs = async (req, res) => {
     try{
+        console.log(req.query);
         // kreiranje kopija na objektot
         const queryObj = {...req.query};
         // go konveritrame objektot vo string
@@ -33,7 +34,7 @@ const getAllBlogs = async (req, res) => {
         const query = JSON.parse(queryString);
 
         // gi zemame site dokumenti od kolekcijata so metodata find()
-        const blogs = await Blog.find();
+        const blogs = await Blog.find(query);
 
         res.status(200).json({
             status: "Success",
