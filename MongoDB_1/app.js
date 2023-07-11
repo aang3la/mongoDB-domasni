@@ -3,6 +3,10 @@
 //? na ruta "/blogs" da se povikuva i da se kreira blog
 //? i da inma najmalce 10 bloga
 
+//? prodolzenie na dosegasnata domasna
+//? da se kreira celosen crud sistem
+//? za blog
+
 //* Go povikuvame express modulot
 const express = require("express");
 
@@ -32,6 +36,10 @@ mongoose.connect("mongodb+srv://aang3la:asdfghjkl7@cluster0.urorkkp.mongodb.net/
 
 app.get("/blogs", blogCotroller.getAllBlogs);
 app.post("/blogs", blogCotroller.createBlog);
+
+app.get("/blogs/:id", blogCotroller.getBlog);
+app.patch("/blogs/:id", blogCotroller.updateBlog);
+app.delete("/blogs/:id", blogCotroller.deleteBlog);
 
 
 //* Slusanje na server i startuvanje na app

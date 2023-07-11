@@ -18,7 +18,7 @@ const blogSchema = new mongoose.Schema({
         type: Number,
         default: 3,
     },
-    duration: {
+    date: {
         type: Date,
         default: Date.now,
     }
